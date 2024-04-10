@@ -362,6 +362,28 @@ box-shadow: 0px 3px 4px 0px rgba(50, 50, 50, 0.38);
   font-size: 1.5em; /* Enlarges the caption on hover */
 }
 
+/* Media query for mobile devices */
+@media (max-width: 768px) {
+  .circle {
+    width: 100px; /* Reduced circle size for mobile */
+    height: 100px; /* Reduced circle size for mobile */
+  }
+
+  .circle-with-caption p {
+    font-size: 1em; /* Smaller font size for mobile */
+  }
+
+  .circle-container {
+    flex-wrap: wrap; /* Allows the circles to wrap onto the next line on smaller screens */
+    justify-content: center; /* Centers the circles in the container on smaller screens */
+  }
+
+  .circle-with-caption {
+    flex-basis: 50%; /* Adjust this to control layout, 50% for 2 per row, etc. */
+    margin: 5px 0; /* Reduced margin for mobile */
+  }
+}
+
 
 .navbar-inverse .navbar-nav > li > a {
 	font-size: 1.2em;
