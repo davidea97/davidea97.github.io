@@ -425,8 +425,22 @@ box-shadow: 0px 3px 4px 0px rgba(50, 50, 50, 0.38);
 }
 .banner-container > img {
 	width: 100%;
-	
 }
+
+@media (max-width: 768px) {
+  .banner-content {
+    padding: 20px;
+  }
+  .banner-content h1, .banner-content p {
+    text-align: center;
+    font-size: smaller;
+  }
+  .social-icons a {
+    margin: 0 5px;
+    font-size: smaller;
+  }
+}
+
 .banner-content {
 	position: absolute;
 	z-index: 3;
