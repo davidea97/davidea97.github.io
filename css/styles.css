@@ -14,6 +14,31 @@ body {
 	-webkit-font-smoothing: antialiased;
 	background: #fff;
 }
+
+body {
+    font-size: 16px; /* Default font size for desktop */
+}
+
+@media (max-width: 768px) {
+    body {
+        font-size: 14px; /* Smaller base font size for tablets */
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: 12px; /* Even smaller base font size for mobile phones */
+    }
+}
+
+h1 {
+    font-size: 2.5rem; /* Adjusts based on body font-size */
+}
+
+p {
+    font-size: 1rem; /* Adjusts based on body font-size */
+}
+
 ::selection {
 	color: #fff;
 	background: #5887FF;
@@ -53,6 +78,7 @@ p {
 	font-weight: 400;
 	background: rgba(255,255,255,0.15);
 }
+
 .button-outline:hover {
 	color: #fff;
 	background: rgba(255,255,255,0.35);
@@ -595,6 +621,22 @@ align-items: center; /* Centers children vertically */
 
 width:300px;
 box-shadow: 12px 0px 0px 12px rgba(13, 113, 165, 0.2), -12px 0px 0px 12px rgba(109, 139, 232, 0.2);
+}
+
+@media (max-width: 768px) {
+    .tileBox img {
+        /* Adjust the size on smaller screens for responsiveness */
+        width: 200px; /* Smaller width for smaller devices */
+        /* You can also adjust the border radius if needed for smaller screens */
+        border-radius: 90px; 
+    }
+}
+@media (max-width: 480px) {
+    .tileBox img {
+        /* Further reduce the size for very small devices */
+        width: 150px;
+        border-radius: 60px;
+    }
 }
 .tileBox p { 
 	font-size: 15px;
