@@ -367,7 +367,8 @@ box-shadow: 0px 3px 4px 0px rgba(50, 50, 50, 0.38);
 
 
   .circle-with-caption p {
-    font-size: 1em; /* Smaller font size for mobile */
+    font-size: 0.9em; /* Smaller font size for mobile */
+    margin-bottom: 15px;
   }
 
   .circle-container {
@@ -378,7 +379,11 @@ box-shadow: 0px 3px 4px 0px rgba(50, 50, 50, 0.38);
   .circle-with-caption {
     flex-basis: 30%; /* Adjust this to control layout, 50% for 2 per row, etc. */
     margin: 5px 0; /* Reduced margin for mobile */
+    margin-bottom: 25px;
   }
+  .circle-with-caption:hover p {
+  font-size: 1.1em; /* Enlarges the caption on hover */
+}
 }
 
 
