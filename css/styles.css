@@ -365,8 +365,8 @@ box-shadow: 0px 3px 4px 0px rgba(50, 50, 50, 0.38);
 /* Media query for mobile devices */
 @media (max-width: 768px) {
   .circle {
-    width: 50; /* Reduced circle size for mobile */
-    height: 50px; /* Reduced circle size for mobile */
+    width: 50%; /* Reduced circle size for mobile */
+    height: auto; /* Reduced circle size for mobile */
   }
 
   .circle-with-caption p {
@@ -537,7 +537,17 @@ font-weight: 700;
 letter-spacing: .1em;
 line-height: 1em;
 text-transform: uppercase;
+
 }
+/* Media query for devices with a max-width of 768px (Tablets and down to mobile) */
+@media (max-width: 768px) {
+  .banner-content header h1 {
+    font-size: 2.5em; /* Adjusted for smaller screens */
+    letter-spacing: .05em; /* Slightly reduce letter-spacing */
+    line-height: 1.2em; /* Adjust line height for better readability */
+  }
+}
+
 .banner-content header p{
  text-align:center;
  font-size: 2em;
@@ -547,6 +557,18 @@ letter-spacing: .1em;
 line-height: 3em;
 text-transform: uppercase;
 }
+
+/* Media query for devices with a max-width of 768px */
+@media (max-width: 768px) {
+  .banner-content header p {
+    font-size: 1.2em; /* Reduced size for smaller screens */
+    margin-bottom: 3px; /* Adjusted spacing */
+    padding: 0 4px; /* Adjust padding for smaller screens */
+    letter-spacing: .05em; /* Reduce letter-spacing for smaller screens */
+    line-height: 1.5em; /* Adjusted for readability */
+  }
+}
+
 .centered {
 margin-left: auto;
 margin-right: auto;
@@ -766,15 +788,16 @@ min-height:200px;
 }
 
 .dei-img {
-  height: 180px; /* Fixed height */
-  width: 180px; /* Fixed width */
+  
+  width: 70%; /* Fixed width */
+  height: auto; /* Fixed height */
   object-fit: contain; /* Ensures the image covers the area, may crop the image */
   display: block; /* Elimina spazi aggiuntivi sotto l'immagine */
   margin: auto; /* Centra l'immagine orizzontalmente nel contenitore */
 }
 .unipd-img {
-  height: 250px; /* Fixed height */
-  width: 250px; /* Fixed width */
+  width: 130%; /* Fixed width */
+  height: auto; /* Fixed height */
   object-fit: contain; /* Ensures the image covers the area, may crop the image */
   display: block; /* Elimina spazi aggiuntivi sotto l'immagine */
   margin: auto; /* Centra l'immagine orizzontalmente nel contenitore */
