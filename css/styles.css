@@ -300,17 +300,7 @@ box-shadow: 0px 3px 4px 0px rgba(50, 50, 50, 0.38);
   text-align: center; /* Ensures caption text is centered */
 }
 
-.circle {
-  width: 200px; /* Circle size */
-  height: 200px;
-  border-radius: 50%; /* Makes the div circular */
-  background-color: #f1f1f1; /* Circle color */
-  display: flex;
-  justify-content: center; /* Center the icon horizontally */
-  align-items: center; /* Center the icon vertically */
-  margin: 10px; /* Spacing between circles */
-  transition: transform 0.3s ease; /* Smooth transition for scaling */
-}
+
 
 .circle:hover {
   transform: scale(1.1); /* Increase the size by 10% on hover */
@@ -335,6 +325,8 @@ box-shadow: 0px 3px 4px 0px rgba(50, 50, 50, 0.38);
   margin: 10px; /* Spacing between circles */
   display: inline-block; /* Aligns circles in a row */
   position: relative; /* Needed for absolute positioning of the image */
+  transition: transform 0.3s ease; /* Smooth transition for scaling */
+
 }
 
 .circle img {
@@ -366,7 +358,7 @@ box-shadow: 0px 3px 4px 0px rgba(50, 50, 50, 0.38);
 @media (max-width: 768px) {
   .circle {
     width: 50%; /* Reduced circle size for mobile */
-    height: auto; /* Reduced circle size for mobile */
+    height: 50%; /* Reduced circle size for mobile */
   }
 
   .circle-with-caption p {
