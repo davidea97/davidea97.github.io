@@ -357,9 +357,14 @@ box-shadow: 0px 3px 4px 0px rgba(50, 50, 50, 0.38);
 /* Media query for mobile devices */
 @media (max-width: 768px) {
   .circle {
-    width: 50%; /* Reduced circle size for mobile */
-    height: 50%; /* Reduced circle size for mobile */
+    width: 20vw; /* Use viewport width to keep the aspect ratio */
+    height: 20vw; /* Same as width to maintain a circle */
+    border-radius: 50%; /* Ensures the element is a circle */
+    /* Additional styling to center the circle if necessary */
+    margin: auto;
+    display: block;
   }
+
 
   .circle-with-caption p {
     font-size: 1em; /* Smaller font size for mobile */
@@ -371,7 +376,7 @@ box-shadow: 0px 3px 4px 0px rgba(50, 50, 50, 0.38);
   }
 
   .circle-with-caption {
-    flex-basis: 50%; /* Adjust this to control layout, 50% for 2 per row, etc. */
+    flex-basis: 30%; /* Adjust this to control layout, 50% for 2 per row, etc. */
     margin: 5px 0; /* Reduced margin for mobile */
   }
 }
@@ -663,11 +668,11 @@ padding:60px 0;
 }
 .tileBox img{
 background-size: cover; /* Cover the entire .tileBox */
-  background-position: center; /* Center the background image */
+background-position: center; /* Center the background image */
 overflow:hidden;
 border-radius:120px;
 align-items: center; /* Centers children vertically */
-  justify-content: center; /* Centers children horizontally */
+justify-content: center; /* Centers children horizontally */
 
 width:300px;
 box-shadow: 12px 0px 0px 12px rgba(13, 113, 165, 0.2), -12px 0px 0px 12px rgba(109, 139, 232, 0.2);
@@ -676,21 +681,27 @@ box-shadow: 12px 0px 0px 12px rgba(13, 113, 165, 0.2), -12px 0px 0px 12px rgba(1
 @media (max-width: 768px) {
     .tileBox img {
         /* Adjust the size on smaller screens for responsiveness */
-        width: 200px; /* Smaller width for smaller devices */
+        width: 100%; /* Smaller width for smaller devices */
+        height: auto;
+        margin-bottom: 20px; /* Adds space at the bottom */
         /* You can also adjust the border radius if needed for smaller screens */
         border-radius: 90px; 
+        margin-left: %;
     }
 }
 @media (max-width: 480px) {
     .tileBox img {
         /* Further reduce the size for very small devices */
-        width: 150px;
+        width: 100%;
+        margin-bottom: 20px; /* Adds space at the bottom */
         border-radius: 60px;
+        margin-left: 5%;
     }
 }
 .tileBox p { 
 	font-size: 15px;
 	color: #777777;
+	text-align: center;
 	padding: 20px;
 	margin: 0px;
 }
@@ -780,20 +791,30 @@ min-height:200px;
 }
 
 .dei-img {
-  
-  width: 70%; /* Fixed width */
+  width: 180px; /* Fixed width */
   height: auto; /* Fixed height */
   object-fit: contain; /* Ensures the image covers the area, may crop the image */
   display: block; /* Elimina spazi aggiuntivi sotto l'immagine */
   margin: auto; /* Centra l'immagine orizzontalmente nel contenitore */
 }
 .unipd-img {
-  width: 130%; /* Fixed width */
+  width: 300px; /* Fixed width */
   height: auto; /* Fixed height */
   object-fit: contain; /* Ensures the image covers the area, may crop the image */
   display: block; /* Elimina spazi aggiuntivi sotto l'immagine */
   margin: auto; /* Centra l'immagine orizzontalmente nel contenitore */
 }
+
+@media (max-width: 768px) {
+  .dei-img{
+    width: 30%; /* Adjusts the width for smaller screens */
+    /* Remove or adjust the object-fit as needed; it might not be necessary if using width: 100% */
+  }
+  .unipd-img {
+    width: 40%; /* Adjusts the width for smaller screens */
+  }
+}
+
 /*Experience*/
 #experience{
 	background: #F8F8F8;
