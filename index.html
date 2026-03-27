@@ -4,8 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
-    <title>Davide Allegro | Ph.D. Computer Vision & Robotics</title>
-    <meta name="description" content="Academic portfolio of Davide Allegro, Ph.D. Student at University of Padova. Focus: Multi-camera calibration, 3D Reconstruction.">
+    <title>Davide Allegro | PostDoc researcher</title>
+    <meta name="description" content="Academic portfolio of Davide Allegro, PostDoc researcher at University of Padova. Focus: Multi-camera calibration, 3D Reconstruction.">
     <meta name="author" content="Davide Allegro">
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -33,6 +33,7 @@
             background-color: var(--bg-body);
             overflow-x: hidden;
             line-height: 1.7;
+            position: relative;
         }
 
         /* --- Typography (LATO) --- */
@@ -70,11 +71,21 @@
         }
         .nav-link.active, .nav-link:hover { color: var(--primary-color) !important; }
         .nav-link::after {
-            content: ''; position: absolute; width: 0; height: 2px; bottom: -4px; left: 0;
-            background-color: var(--primary-color); transition: width 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -4px;
+            width: 100%;
+            height: 2px;
+            background-color: var(--primary-color);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
         }
-        .nav-link:hover::after, .nav-link.active::after { width: 100%; }
-
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            transform: scaleX(1);
+        }
         /* --- Hero Section --- */
         .hero-section {
             padding: 180px 0 120px;
@@ -118,7 +129,10 @@
 
 
         /* --- Sections General --- */
-        section { padding: 90px 0; }
+        section { 
+            padding: 90px 0; 
+            scroll-margin-top: 120px;
+        }
         .section-label {
             text-transform: uppercase; font-size: 0.8rem; font-weight: 700; 
             letter-spacing: 2px; color: var(--primary-color); margin-bottom: 12px; display: block;
@@ -183,7 +197,7 @@
     </style>
 </head>
 
-<body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="100">
+<body>
 
 <nav class="navbar navbar-expand-lg fixed-top">
   <div class="container">
@@ -198,7 +212,8 @@
         <li class="nav-item"><a class="nav-link" href="#publications">Publications</a></li>
         <li class="nav-item"><a class="nav-link" href="#awards">Awards</a></li>
         <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-      </ul>
+        <li class="nav-item"><a class="nav-link" href="#highlights">Highlights</a></li>
+        </ul>
     </div>
   </div>
 </nav>
@@ -264,55 +279,74 @@
                         <h5 class="fw-bold mb-1">Paper Accepted at 
                         <a href="https://cvpr.thecvf.com/" target="_blank" class="text-decoration-none">
                             CVPR 2026
-                        </a><span class="news-badge">RESEARCH ACHIEVEMENT</Ri:a></span></h5>
-                        <p class="text-muted mb-0">Our paper titled 
-                        <strong>"Catch Me if You Can: Active Mapping of Moving 3D Objects"</strong> 
-                        has been accepted at CVPR 2026.  
-                        We introduce, for the first time, a novel task for actively reconstructing unknown dynamic objects in unknown environments, together with a new method called <em>Paparazzo</em> to address this challenge.</a></p>
+                        </a><span class="news-badge">RESEARCH ACHIEVEMENT</span></h5>
+                        <p class="text-muted mb-0">
+                            Our paper 
+                            <a href="https://davidea97.github.io/paparazzo-page/" target="_blank" class="text-decoration-none">
+                                <strong>Paparazzo: Active Mapping of Moving 3D Objects</strong>
+                            </a>
+                            has been accepted at CVPR 2026.
+                        </p> 
                     </div>
                 </div>
                 <div class="news-item d-md-flex align-items-start" data-aos="fade-up" data-aos-delay="100">
                     <div class="news-date">FEB 2026</div>
                     <div class="ps-md-4 border-start-md border-light">
-                        <h5 class="fw-bold mb-1">PhD cum laude<span class="news-badge">RESEARCH ACHIEVEMENT</Ri:a></span></h5>
+                        <h5 class="fw-bold mb-1">PhD cum laude<span class="news-badge">RESEARCH ACHIEVEMENT</span></h5>
                         <p class="text-muted mb-0">Successfully defended my PhD thesis titled 
                                                     "Perception from the Robot's Perspective: Unified Calibration for Human Understanding and Robot-Object Interaction in Human-Robot Collaboration."</a></p>
                     </div>
                 </div>
-                <div class="news-item d-md-flex align-items-start" data-aos="fade-up" data-aos-delay="100">
-                    <div class="news-date">NOV 2025</div>
-                    <div class="ps-md-4 border-start-md border-light">
-                        <h5 class="fw-bold mb-1">AI & Robotics Trainer <span class="news-badge">WORKING ACTIVITY</Ri:a></span></h5>
-                        <p class="text-muted mb-0">Delivered an intensive two-day industry-focused training on AI and Robotics, translating advanced research concepts into practical automation solutions at Danieli Automation.</a></p>
+                <div class="collapse" id="olderNews">
+                    <div class="news-item d-md-flex align-items-start" data-aos="fade-up" data-aos-delay="100">
+                        <div class="news-date">NOV 2025</div>
+                        <div class="ps-md-4 border-start-md border-light">
+                            <h5 class="fw-bold mb-1">AI & Robotics Trainer <span class="news-badge">WORKING ACTIVITY</span></h5>
+                            <p class="text-muted mb-0">Delivered an intensive two-day industry-focused training on AI and Robotics, translating advanced research concepts into practical automation solutions at Danieli Automation.</p>
+                        </div>
+                    </div>
+
+                    <div class="news-item d-md-flex align-items-start" data-aos="fade-up" data-aos-delay="100">
+                        <div class="news-date">SEP 2025</div>
+                        <div class="ps-md-4 border-start-md border-light">
+                            <h5 class="fw-bold mb-1">Completed Visiting PhD <span class="news-badge">RESEARCH ACTIVITY</span></h5>
+                            <p class="text-muted mb-0">Completed 6 months of Visiting PhD Period at the IMAGINE Lab, Institut Polytechnique de Paris, Paris, France, supervied by <a href="https://vincentlepetit.github.io/" target="_blank" class="text-decoration-underline text-primary">Vincent Lepetit</a></p>
+                        </div>
+                    </div>
+
+                    <div class="news-item d-md-flex align-items-start" data-aos="fade-up" data-aos-delay="100">
+                        <div class="news-date">MAY 2025</div>
+                        <div class="ps-md-4 border-start-md border-light">
+                            <h5 class="fw-bold mb-1">Presentation at ICRA 2025 <span class="news-badge">CONFERENCE</span></h5>
+                            <p class="text-muted mb-0">Presented the RA-L paper "Multi-camera hand-eye calibration for human-robot collaboration in industrial robotic workcells" in Atlanta, USA.</p>
+                        </div>
+                    </div>
+
+                    <div class="news-item d-md-flex align-items-start" data-aos="fade-up" data-aos-delay="100">
+                        <div class="news-date">OCT 2024</div>
+                        <div class="ps-md-4 border-start-md border-light">
+                            <h5 class="fw-bold mb-1">Presentation at IROS 2024 <span class="news-badge">CONFERENCE</span></h5>
+                            <p class="text-muted mb-0">Presented the paper "MEMROC: Multi-Eye to Mobile RObot Calibration" in Abu Dhabi.</p>
+                        </div>
+                    </div>
+
+                    <div class="news-item d-md-flex align-items-start" data-aos="fade-up" data-aos-delay="100">
+                        <div class="news-date">SEP 2024</div>
+                        <div class="ps-md-4 border-start-md border-light">
+                            <h5 class="fw-bold mb-1">Presentation at ECCV 2024 <span class="news-badge">CONFERENCE</span></h5>
+                            <p class="text-muted mb-0">Presented the two papers "Sood-imagenet: a large-scale dataset for semantic out-of-distribution image classification and semantic segmentation" and "Multi-view Pose Fusion for Occlusion-Aware 3D Human Pose Estimation" in Milan, Italy.</p>
+                        </div>
                     </div>
                 </div>
-                <div class="news-item d-md-flex align-items-start" data-aos="fade-up" data-aos-delay="100">
-                    <div class="news-date">SEP 2025</div>
-                    <div class="ps-md-4 border-start-md border-light">
-                        <h5 class="fw-bold mb-1">Completed Visiting PhD <span class="news-badge">RESEARCH ACTIVITY</span></h5>
-                        <p class="text-muted mb-0">Completed 6 months of Visiting PhD Period at the IMAGINE Lab, Institut Polytechnique de Paris, Paris, France, supervied by <a href="https://vincentlepetit.github.io/" target="_blank" class="text-decoration-underline text-primary">Vincent Lepetit</a></p>
-                    </div>
-                </div>
-                <div class="news-item d-md-flex align-items-start" data-aos="fade-up" data-aos-delay="100">
-                    <div class="news-date">MAY 2025</div>
-                    <div class="ps-md-4 border-start-md border-light">
-                        <h5 class="fw-bold mb-1">Presentation at ICRA 2025 <span class="news-badge">CONFERENCE</span></h5>
-                        <p class="text-muted mb-0">Presented the RA-L paper "Multi-camera hand-eye calibration for human-robot collaboration in industrial robotic workcells" in Atlanta, USA.</p>
-                    </div>
-                </div>
-                <div class="news-item d-md-flex align-items-start" data-aos="fade-up" data-aos-delay="100">
-                    <div class="news-date">OCT 2024</div>
-                    <div class="ps-md-4 border-start-md border-light">
-                        <h5 class="fw-bold mb-1">Presentation at IROS 2024 <span class="news-badge">CONFERENCE</span></h5>
-                        <p class="text-muted mb-0">Presented the paper "MEMROC: Multi-Eye to Mobile RObot Calibration" in Abu Dhabi.</p>
-                    </div>
-                </div>
-                <div class="news-item d-md-flex align-items-start" data-aos="fade-up" data-aos-delay="100">
-                    <div class="news-date">SEP 2024</div>
-                    <div class="ps-md-4 border-start-md border-light">
-                        <h5 class="fw-bold mb-1">Presentation at ECCV 2024 <span class="news-badge">CONFERENCE</span></h5>
-                        <p class="text-muted mb-0">Presented the two papers "Sood-imagenet: a large-scale dataset for semantic out-of-distribution image classification and semantic segmentation" and "Multi-view Pose Fusion for Occlusion-Aware 3D Human Pose Estimation" in Milan, Italy.</p>
-                    </div>
+                <div class="text-center mt-4">
+                    <button class="btn btn-outline-dark btn-pill" type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#olderNews"
+                            aria-expanded="false"
+                            aria-controls="olderNews"
+                            id="toggleNewsBtn">
+                        Show more news
+                    </button>
                 </div>
             </div>
         </div>
@@ -656,14 +690,76 @@
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
   AOS.init({ once: true, offset: 50, duration: 800, easing: 'ease-out-cubic' });
-  
-  // Close mobile menu on click
-  document.querySelectorAll('.nav-link').forEach(l => l.addEventListener('click', () => {
-      let collapse = document.querySelector('.navbar-collapse');
-      if(collapse.classList.contains('show')) {
-          new bootstrap.Collapse(collapse).hide();
+
+  const navLinks = Array.from(document.querySelectorAll('.navbar .nav-link'));
+  const sections = navLinks
+    .map(link => document.querySelector(link.getAttribute('href')))
+    .filter(Boolean);
+
+  function setActiveLink() {
+    const navbar = document.querySelector('.navbar');
+    const navbarHeight = navbar ? navbar.offsetHeight : 0;
+    const scrollPos = window.scrollY + navbarHeight + 40;
+
+    let currentSection = sections[0];
+
+    sections.forEach(section => {
+      if (section.offsetTop <= scrollPos) {
+        currentSection = section;
       }
-  }));
+    });
+
+    navLinks.forEach(link => {
+      link.classList.remove('active');
+      if (link.getAttribute('href') === `#${currentSection.id}`) {
+        link.classList.add('active');
+      }
+    });
+  }
+
+  // aggiorna active mentre scorri
+  window.addEventListener('scroll', setActiveLink);
+  window.addEventListener('load', setActiveLink);
+  window.addEventListener('resize', setActiveLink);
+
+  // chiusura menu mobile + aggiornamento active al click
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks.forEach(l => l.classList.remove('active'));
+      link.classList.add('active');
+
+      const collapse = document.querySelector('.navbar-collapse');
+      if (collapse.classList.contains('show')) {
+        new bootstrap.Collapse(collapse).hide();
+      }
+    });
+  });
+
+  // Toggle button text for news
+  const olderNews = document.getElementById('olderNews');
+  const toggleNewsBtn = document.getElementById('toggleNewsBtn');
+  const newsSection = document.getElementById('news');
+
+  if (olderNews && toggleNewsBtn) {
+    olderNews.addEventListener('show.bs.collapse', function () {
+      toggleNewsBtn.textContent = 'Show less news';
+    });
+
+    olderNews.addEventListener('hidden.bs.collapse', function () {
+      toggleNewsBtn.textContent = 'Show more news';
+    });
+
+    toggleNewsBtn.addEventListener('click', function () {
+      const isOpen = olderNews.classList.contains('show');
+
+      if (isOpen) {
+        newsSection.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
+    });
+  }
 </script>
 
 </body>
